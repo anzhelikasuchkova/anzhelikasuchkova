@@ -1,10 +1,27 @@
-## Hi there 👋
+## Hi, I'm Anzhelika
 
-### Hi, I'm Anzhelika
-I build internal automation for a materials testing lab at SOCOTEC (Denver). Most of my recent work is a Python toolchain that turns multi-hour weekly report workflows into a handful of `.bat` launches — PDF parsing, Outlook draft generation, file-share routing, and per-PM state tracking.
+I build internal automation for a materials testing lab at [SOCOTEC](https://www.socotec.com/) (Denver) —
+turning multi-hour weekly workflows into a handful of `.bat` launches.
 
-The repos that matter live in private — they touch project numbers, contact lists, and a real file share — but I'm happy to walk through architecture and design decisions on request.
+---
 
-**Stack I reach for:** Python, pdfplumber, python-docx, COM automation (Outlook + Word), Microsoft Graph API, JSON-as-state.
+### What I've built
 
-**Recent focus:** turning brittle Excel-tracker workflows into idempotent state machines. 
+| Project | What it does | Stack |
+|---|---|---|
+| Break report parser | Extracts test data from PDFs, generates Outlook drafts, routes to the right PM | pdfplumber, COM automation, python-docx |
+| Lab tracker automation | Idempotent weekly state machine replacing a brittle Excel workflow | openpyxl, Python, JSON-as-state |
+| File-share router | Classifies and distributes reports to project folders on a live file share | Microsoft Graph API, Python |
+
+> The repos are private (project numbers + contact lists), but ask me about architecture or design decisions.
+
+---
+
+### Stack
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![Microsoft Graph](https://img.shields.io/badge/Microsoft%20Graph-0078D4?style=flat&logo=microsoft&logoColor=white)
+![Outlook](https://img.shields.io/badge/Outlook%20COM-0072C6?style=flat&logo=microsoftoutlook&logoColor=white)
+![JSON](https://img.shields.io/badge/JSON--state-000000?style=flat&logo=json&logoColor=white)
+
+**Currently focused on:** idempotent state machines over brittle spreadsheet workflows.
