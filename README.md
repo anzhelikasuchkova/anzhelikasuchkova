@@ -1,6 +1,6 @@
 ## Hi, I'm Anzhelika
 
-I build internal automation for a materials testing lab at [SOCOTEC](Denver) —
+I build internal automation for a materials testing lab at N&M/SOCOTEC (Denver) —
 turning multi-hour weekly workflows into a handful of `.bat` launches.
 
 ---
