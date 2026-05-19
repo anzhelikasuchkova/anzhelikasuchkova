@@ -6,7 +6,7 @@ The repos that matter live in private but I'm happy to walk through architecture
 | Project | What it does |
 |---|---|
 | **CMT-report-automation** | Cuts a ~20-hour weekly reporting workflow to minutes — Word template filling, PDF generation, Outlook draft creation, and per-PM state tracking via a five-stage JSON state machine |
-| **break-report-automation** | Automates concrete break report intake — extracts data from PDFs, renames and routes files to the project share, creates Outlook drafts from the lab email, and updates the lab tracker |
+| **break-report-automation** | Automates concrete break report intake — extracts data from PDFs, renames and routes files to the project share, creates Outlook drafts from the lab email, and updates the lab hours tracker |
 
 **Stack I reach for:** Python, pdfplumber, python-docx, COM automation (Outlook + Word), Microsoft Graph API, JSON-as-state.
 
