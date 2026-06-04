@@ -1,19 +1,15 @@
-# Hi, I'm Anzhelika 👋
+# Hi, I'm Anzhelika
 
-**Construction Services Coordinator** at SOCOTEC Denver, with a passion for **automation and standardization**.
+I build internal automation for a materials testing lab at SOCOTEC (Denver). Most of my recent work is a Python toolchain that turns multi-hour weekly report workflows into a handful of `.bat` launches — PDF parsing, Outlook draft generation, file-share routing, and per-PM state tracking.
 
-Building tools to eliminate manual processes in materials testing and construction reporting. Working toward becoming an **AI & Automation Specialist** — turning repetitive workflows into intelligent, scalable systems.
+The repos that matter live in private but I'm happy to walk through architecture and design decisions on request.
 
 ---
 
 ## 🔧 Current Projects
 
 ### 📋 [CMT Report Automation](https://github.com/anzhelikasuchkova/CMT-report-automation) `PRIVATE`
-Weekly materials testing summary compilation pipeline. Orchestrates:
-- Report collection and organization
-- Word template compilation with custom dividers
-- PM digest summaries and Outlook integration
-- Email draft generation with intelligent contact routing
+Cuts a ~20-hour weekly reporting workflow to minutes. Orchestrates report collection, Word template filling, PDF generation, Outlook draft creation, and per-PM state tracking via a five-stage JSON state machine (Needs Summary → Compiled → Digest Sent → Draft Created → Archived).
 
 **Tech:** Python, Word/Excel automation, JSON, Git  
 **Features:** schedule-based filtering, incremental processing, live status tracking
@@ -57,18 +53,15 @@ Automates processing and distribution of concrete compressive strength reports. 
 
 ---
 
-## 💡 Skills & Tech Stack
+## 💡 Stack I reach for
 
-**Languages:** Python, SQL, Bash/PowerShell  
-**APIs & Integration:** Kordata, Outlook COM, Word/Excel Interop, REST  
-**Workflow:** Git, JSON config, automation scripting, data pipelines  
-**Tools:** pypdf, pdfplumber, pandas, logging, atomic file operations
+Python, pdfplumber, python-docx, COM automation (Outlook + Word), Kordata API, JSON-as-state, SQL, Bash/PowerShell.
 
 ---
 
-## 📌 Mission
+## 📌 Recent focus
 
-Standardize materials testing and construction workflows through automation. Every manual, repetitive process is a candidate for intelligent, reliable tooling.
+Turning brittle Excel-tracker workflows into idempotent state machines. Building automated API data extraction pipelines (Kordata) to eliminate manual report downloads and feed structured data into downstream workflows.
 
 ---
 
