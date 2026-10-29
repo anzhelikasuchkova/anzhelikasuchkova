@@ -1,68 +1,38 @@
 # Hi, I'm Anzhelika
 
-I build internal automation for a materials testing lab at SOCOTEC (Denver). Most of my recent work is a Python toolchain that turns multi-hour weekly report workflows into a handful of `.bat` launches — PDF parsing, Outlook draft generation, file-share routing, and per-PM state tracking.
+I build the automation behind materials-testing operations at SOCOTEC's Denver office. My tools take field and lab reports from Kordata (our testing data system) to clients, run day-to-day dispatching, and turn multi-hour weekly workflows into scheduled jobs.
 
-The repos that matter live in private but I'm happy to walk through architecture and design decisions on request.
-
----
-
-## 🔧 Current Projects
-
-### 📋 [CMT Report Automation](https://github.com/anzhelikasuchkova/CMT-report-automation) `PRIVATE`
-Cuts a ~20-hour weekly reporting workflow to minutes. Orchestrates report collection, Word template filling, PDF generation, Outlook draft creation, and per-PM state tracking via a five-stage JSON state machine (Needs Summary → Compiled → Digest Sent → Draft Created → Archived).
-
-**Tech:** Python, Word/Excel automation, JSON, Git  
-**Features:** schedule-based filtering, incremental processing, live status tracking
+The repositories are private. I'm happy to walk through the architecture and design decisions.
 
 ---
 
-### 🔄 [Kordata Sync](https://github.com/anzhelikasuchkova/kordata_automation) `PRIVATE`
-Automated report download from Kordata API, replacing manual browser workflows.
+## 🔧 Current work
 
-**Supports:**
-- LAB (materials testing samples)
-- SIR (special inspections)
-- DFR (daily field reports)
-- FDT (field density tests)
-- SCHEDULE (weekly dispatch summary)
+### 📋 [CMT Report Automation](https://github.com/socotec-denver-automation/CMT-report-automation) `PRIVATE`
+Weekly Materials Testing Summaries now assemble themselves as project managers approve reports. An hourly loop downloads approved reports from Kordata, stages them for review, compiles each finished week into a client-ready PDF, and drafts the PM digest. It replaced up to 20 hours a week of manual work.
 
-**Tech:** Python, Requests, Kordata API, session-based auth  
-**Features:** smart filtering, date-range queries, file overwrite detection, folder structure auto-nesting
+It also feeds a **client report portal** on SharePoint, now rolling out: approved reports wait in a review library, a principal engineer approves them in batches, and a Power Automate flow files each one into that client's own project library. Reports corrected after they were sent are detected and flagged for another review.
+
+**Tech:** Python, python-docx, PyMuPDF, Outlook automation, SharePoint, Power Automate, JSON state
 
 ---
 
-### 📄 [Concrete Break Report Automation](https://github.com/anzhelikasuchkova/break_report_automation) `PRIVATE`
-Automates processing and distribution of concrete compressive strength reports. Reads PDFs from Outlook, renames and files them to project folders, creates ready-to-send Outlook drafts, and tracks lab hours.
+### 🔄 [Kordata Automation](https://github.com/socotec-denver-automation/kordata_automation) `PRIVATE`
+Day-to-day dispatching through Kordata's web API: creating, copying and editing work orders, daily sample pickups, the daily schedule, and hours reconciliation against Deltek Vision. Every dispatch is checked against a project registry before it's saved and read back afterwards.
 
-**Report Processing:**
-- Scans Outlook for break report emails
-- Extracts project number, test date, lab number, and strength results using pdfplumber
-- Merges PDFs by project and date
-- Renames files consistently
-- Copies to G:\\ project folder structure
-- Auto-creates Outlook draft with attachments
+It also turns Kordata firestop inspection reports into the City of Aurora's ASTM E2174 inspection forms.
 
-**Lab Hours Tracking:**
-- Maintains Excel-based lab tracker (weekly updated)
-- Logs testing hours by project and technician
-- Tracks concrete cylinder information and test results
-- Generates reconciliation reports for accuracy
+**Tech:** Python, Requests, Kordata web API, Windows Task Scheduler
 
-**Tech:** Python, pdfplumber, Outlook COM, Excel Interop, PDF processing  
-**Features:** manual input fallback for scanned PDFs, project reconciliation, automated contact routing, lab hours tracking
+---
+
+### 📄 [Concrete Break Report Automation](https://github.com/socotec-denver-automation/break-report-automation) `PRIVATE`
+Reads concrete compressive-strength reports, files them to project folders, prepares the client emails, and keeps the lab-hours tracker in step with Kordata. Automatic sending of routine emails is in a dry-run trial: every rule is checked before anything goes out.
+
+**Tech:** Python, pdfplumber, Outlook automation, Excel
 
 ---
 
 ## 💡 Stack I reach for
 
-Python, pdfplumber, python-docx, COM automation (Outlook + Word), Kordata API, JSON-as-state, SQL, Bash/PowerShell.
-
----
-
-## 📌 Recent focus
-
-Turning brittle Excel-tracker workflows into idempotent state machines. Building automated API data extraction pipelines (Kordata) to eliminate manual report downloads and feed structured data into downstream workflows.
-
----
-
-*Last updated: June 2026*
+Python, Requests, pdfplumber, python-docx, PyMuPDF, Outlook and Word automation, SharePoint, Power Automate, JSON-as-state, SQL, PowerShell.
